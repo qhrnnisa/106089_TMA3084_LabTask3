@@ -12,9 +12,7 @@ class RestaurantMenuApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Restaurant Menu',
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
+      theme: ThemeData(primarySwatch: Colors.orange),
       home: const MenuScreen(),
     );
   }
@@ -42,18 +40,24 @@ class MenuScreen extends StatelessWidget {
         child: ListView(
           children: const [
             MenuCard(
-              title: 'Vegetable Pizza',
-              imageUrl: 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png',
+              title: 'Crispy Burger',
+              // Burger icon image URL
+              imageUrl:
+                  'https://cdn-icons-png.flaticon.com/512/3075/3075977.png',
             ),
             SizedBox(height: 12),
             MenuCard(
-              title: 'Chicken Pizza',
-              imageUrl: 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png',
+              title: 'Fresh Sushi Set',
+              // Sushi icon image URL
+              imageUrl:
+                  'https://cdn-icons-png.flaticon.com/512/3075/3075994.png',
             ),
             SizedBox(height: 12),
             MenuCard(
-              title: 'Cheese Pizza',
-              imageUrl: 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png',
+              title: 'Italian Pasta',
+              // Pasta icon image URL
+              imageUrl:
+                  'https://cdn-icons-png.flaticon.com/512/3076/3076024.png',
             ),
           ],
         ),
@@ -66,20 +70,14 @@ class MenuCard extends StatelessWidget {
   final String title;
   final String imageUrl;
 
-  const MenuCard({
-    super.key,
-    required this.title,
-    required this.imageUrl,
-  });
+  const MenuCard({super.key, required this.title, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       color: Colors.orange,
       elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
@@ -94,10 +92,7 @@ class MenuCard extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.network(
-                  imageUrl,
-                  fit: BoxFit.contain,
-                ),
+                child: Image.network(imageUrl, fit: BoxFit.contain),
               ),
             ),
             const SizedBox(width: 20),
